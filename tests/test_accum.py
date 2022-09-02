@@ -7,16 +7,17 @@ from stuff.accum import Accumulator
 def accum():
     return Accumulator()
 
-@pytest.fixture 
-def accum2():
-    return Accumulator()
+# Below is an example of yielding (ln 13), which acts as a santizer (python generator)
+# @pytest.fixture 
+# def accum():
+#     yield Accumulator()
 
 def test_accum_init(accum):
     assert accum.count == 0
 
-def test_accum_add_one(accum2):
-    accum2.add()
-    assert accum2.count == 1
+def test_accum_add_one(accum):
+    accum.add()
+    assert accum.count == 1
 
 def test_accum_init(accum):
     accum.add(3)
