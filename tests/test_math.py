@@ -1,9 +1,11 @@
 import pytest
 
 # Basic testing files
+@pytest.mark.math
 def test_one_plus_one():
     assert 1 + 1 == 2
 
+@pytest.mark.math
 def test_divide_by_zero():
     # Using pytest here sets the zero devision test fail as a pass, 
     # since its now testing for if theres a zero-division-error
@@ -11,6 +13,7 @@ def test_divide_by_zero():
         num = 2 / 0
     assert 'division by zero' in str(e.value)
 
+@pytest.mark.math
 def test_this_fails():
     a = 1
     b = 2
@@ -22,7 +25,7 @@ def test_this_fails():
 # Is a number times 1 itself?
 
 # DRY = Don't repeat yourself
-
+@pytest.mark.math
 def test_multiply_two_positives():
     assert 2 * 2 == 4
 
