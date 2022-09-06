@@ -11,3 +11,10 @@ purpose
 print(cars)
 print(cars_)
 print(CARS)
+
+name = 'Dennis Plank'
+spouse = 'Sara Plank'
+state = "California"
+
+print(name + " and " + spouse)
+print("{} and {}".format(name, spouse))
